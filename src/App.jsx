@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage'
 
 const App = () => {
   return (
-    <div className='h-[200vh] w-full'>
+    <div className='h-[300vh] w-full'>
       <HomePage />
       <BottomPage/>
     </div>
