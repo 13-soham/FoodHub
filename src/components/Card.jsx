@@ -1,7 +1,10 @@
 import { TbMichelinStarGreen } from "react-icons/tb";
 import { GiChickenOven } from "react-icons/gi";
+import { useDispatch, useSelector } from 'react-redux'
+import { addItem } from "../redux/features/AddtoCart";
 
-const Card = ({ image, name, price, type }) => {
+const Card = ({ image, name, price, type, id }) => {
+    let dispatch = useDispatch();
     return (
         <div className="my-5 mx-3">
             <div className="h-auto md:h-[50vh] w-full md:w-[21vw] bg-amber-50 rounded-xl flex flex-col gap-3 px-3 py-5 shadow-xl hover:bg-amber-100 transition-colors">
@@ -27,7 +30,7 @@ const Card = ({ image, name, price, type }) => {
                             )}
                         </div>
                     </div>
-                    <button className="w-full mt-2 px-4 py-2 md:px-5 md:py-3 text-sm md:text-xl text-amber-50 bg-red-600 rounded-xl cursor-pointer active:scale-95 transition-all duration-150 hover:bg-red-700">
+                    <button onClick={()=> dispatch(addItem({ id, image, name, price, qty : 1 })) } className="w-full mt-2 px-4 py-2 md:px-5 md:py-3 text-sm md:text-xl text-amber-50 bg-red-600 rounded-xl cursor-pointer active:scale-95 transition-all duration-150 hover:bg-red-700">
                         Add to Dish
                     </button>
                 </div>
