@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import logo from "../assets/foodhub.png"
 import { RiShoppingBag3Line } from "react-icons/ri";
+import { filterContext } from "../context/DataContext";
 
 const NavBar = () => {
+  const { SideBar, setSideBar } = useContext(filterContext);
   return (
-    <div className='h-10 w-full flex items-center justify-between px-6 md:px-40 py-10 md:py-20 fixed top-0 left-0 z-50 backdrop-blur-md'>
+    <div className='h-10 w-full flex items-center justify-between px-6 md:px-40 py-10 md:py-20 fixed top-0 left-0 z-30 backdrop-blur-md'>
       <div className="flex gap-3 md:gap-5 items-center">
         <div className='h-12 w-12 md:h-20 md:w-20 bg-amber-100 overflow-hidden flex items-center justify-center p-2 rounded-xl'>
           <img src={logo} alt="lol" className='h-auto w-full' />
@@ -19,7 +22,7 @@ const NavBar = () => {
         
         <div className="h-12 w-12 md:h-17 md:w-17 bg-amber-100 overflow-hidden flex items-center justify-center p-2 rounded-xl cursor-pointer shadow-xl relative">
           <span className="absolute top-0 right-1 md:right-2 text-sm md:text-xl text-red-600 font-extrabold">0</span>
-          <RiShoppingBag3Line className="h-full w-full p-2 md:p-3 text-red-600" />
+          <RiShoppingBag3Line className="h-full w-full p-2 md:p-3 text-red-600" onClick={() => setSideBar(true)}/>
         </div>
       </div>
     </div>
