@@ -1,7 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
-import image4 from "../assets/image4.avif";
+import { useDispatch } from "react-redux";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { addItem, addQty, deleteItem, deleteQty } from "../redux/features/AddtoCart";
+import { addQty, deleteItem, deleteQty } from "../redux/features/AddtoCart";
 
 const MiniCard = ({ id, image, name, price, qty }) => {
     const dispatch = useDispatch();

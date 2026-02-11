@@ -28,8 +28,8 @@ const HomePage = () => {
   let total = subtotal + delivary_fee + taxes;
 
   return (
-    <div className='w-full min-h-screen bg-red-600 text-white overflow-x-hidden relative'>
-      <NavBar />
+    <div className='w-full min-h-screen bg-red-600 text-white overflow-hidden relative'>
+      {/* <NavBar /> */}
       <div className='mt-32 md:mt-55'>
         <SearchBar />
       </div>
