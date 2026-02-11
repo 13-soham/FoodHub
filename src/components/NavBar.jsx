@@ -17,8 +17,8 @@ const NavBar = () => {
       </div>
       
       <div className="flex gap-4 md:gap-7 items-center justify-between">
+        <h1 className="hidden md:block text-amber-100 text-xl">Restaurant</h1>
         <h1 className="hidden md:block text-amber-100 text-xl">About us</h1>
-        <h1 className="hidden md:block text-amber-100 text-xl">Location</h1>
         
         <button className="px-4 py-2 md:px-7 md:py-4 text-sm md:text-xl bg-black rounded-xl cursor-pointer active:scale-95 transition-all duration-150">Sign in</button>
         
