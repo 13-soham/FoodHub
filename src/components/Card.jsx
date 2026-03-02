@@ -2,6 +2,7 @@ import { TbMichelinStarGreen } from "react-icons/tb";
 import { GiChickenOven } from "react-icons/gi";
 import { useDispatch, useSelector } from 'react-redux'
 import { addItem } from "../redux/features/AddtoCart";
+import { toast } from "react-toastify";
 
 const Card = ({ image, name, price, type, id }) => {
     let dispatch = useDispatch();
@@ -30,7 +31,10 @@ const Card = ({ image, name, price, type, id }) => {
                             )}
                         </div>
                     </div>
-                    <button onClick={()=> dispatch(addItem({ id, image, name, price, qty : 1 })) } className="w-full mt-2 px-4 py-2 md:px-5 md:py-3 text-sm md:text-xl text-amber-50 bg-red-600 rounded-xl cursor-pointer active:scale-95 transition-all duration-150 hover:bg-red-700">
+                    <button onClick={()=>{
+                         dispatch(addItem({ id, image, name, price, qty : 1 }));
+                         toast.success(`${name} added in the list`);
+                    } } className="w-full mt-2 px-4 py-2 md:px-5 md:py-3 text-sm md:text-xl text-amber-50 bg-red-600 rounded-xl cursor-pointer active:scale-95 transition-all duration-150 hover:bg-red-700">
                         Add to Dish
                     </button>
                 </div>

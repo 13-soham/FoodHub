@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { addQty, deleteItem, deleteQty } from "../redux/features/AddtoCart";
+import { toast } from "react-toastify";
 
 const MiniCard = ({ id, image, name, price, qty }) => {
     const dispatch = useDispatch();
@@ -25,7 +26,10 @@ const MiniCard = ({ id, image, name, price, qty }) => {
         </div>
         <div className='h-full w-1/4 flex flex-col items-end justify-between pr-3 py-2'>
             <div className="text-lg text-red-700 bg-amber-100 p-2 rounded-md">Rs. <span className="font-semibold">{price}</span> /-</div>
-            <RiDeleteBin6Line onClick={()=> deleteHandler(id)} className="text-2xl text-amber-50 cursor-pointer"/>
+            <RiDeleteBin6Line onClick={()=> {
+                deleteHandler(id);
+                toast.error(`${name} is removed from the list`);
+            }} className="text-2xl text-amber-50 cursor-pointer"/>
         </div>
     </div>
   )

@@ -33,15 +33,35 @@ const BottomPage = () => {
       ) : null}
 
       <div className='flex flex-wrap items-center justify-center md:justify-start gap-3 mt-10'>
-        {AllFood.map((elem, id) => (
-          <Card key={id}
-            image={elem.food_image}
-            name={elem.food_name}
-            type={elem.food_type}
-            id={elem.id}
-            price={elem.price}
-          />
-        ))}
+        {AllFood.length > 0 ? (
+          AllFood.map((elem, id) => (
+            <Card key={id}
+              image={elem.food_image}
+              name={elem.food_name}
+              type={elem.food_type}
+              id={elem.id}
+              price={elem.price}
+            />
+          ))
+        ) : (
+          <div className="flex flex-col items-center justify-center w-full py-20 animate-fade-in">
+            <div className="bg-amber-100 px-8 py-10 rounded-full mb-6 shadow-xl">
+              <span className="text-9xl">🍽️</span>
+            </div>
+            <h2 className="text-3xl md:text-3xl font-extrabold text-red-700 font-[poppins] mb-2">
+              No Food Found
+            </h2>
+            <p className="text-gray-500 text-center max-w-xs md:max-w-md px-4 font-[poppins]">
+              We couldn't find any dishes matching your choice. Try selecting another category!
+            </p>
+            <button
+              onClick={() => filterHandler("All")}
+              className="mt-6 px-6 py-2 text-2xl bg-amber-400 hover:bg-amber-500 text-white font-bold rounded-lg transition-all shadow-md active:scale-95 cursor-pointer"
+            >
+              Show All Food
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )

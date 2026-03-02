@@ -7,7 +7,12 @@ const SearchBar = () => {
     const { Search, setSearch, setAllFood } = useContext(filterContext);
     useEffect(()=>{
         let newList = food_items.filter((elem)=> elem.food_name.toLowerCase().includes(Search) || elem.food_name.includes(Search));
-        setAllFood(newList);
+        if(newList){
+            setAllFood(newList);
+        }
+        else{
+            setAllFood(null);
+        }
     },[Search]);
 
     return (
@@ -33,5 +38,6 @@ const SearchBar = () => {
         </div>
     )
 }
+
 
 export default SearchBar;

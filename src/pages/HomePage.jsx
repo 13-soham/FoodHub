@@ -2,13 +2,13 @@ import foodImage1 from '../assets/chicken.png';
 import foodImage2 from '../assets/chowmin.png';
 import foodImage3 from '../assets/nuggets.png';
 import foodImage4 from '../assets/burger.png';
-import NavBar from '../components/NavBar';
 import SearchBar from '../components/SearchBar';
 import { RxCross1 } from "react-icons/rx";
 import { useContext } from 'react';
 import { filterContext } from '../context/DataContext';
 import MiniCard from '../components/MiniCard';
 import { useSelector } from 'react-redux';
+import useOnlineStatus from '../useOnlineStatus';
 
 const HomePage = () => {
   const { SideBar, setSideBar } = useContext(filterContext);
@@ -26,6 +26,26 @@ const HomePage = () => {
   let taxes = Math.floor(subtotal * 0.7 / 10);
 
   let total = subtotal + delivary_fee + taxes;
+
+
+  const isOnline = useOnlineStatus();
+  // 3. Early return for Offline status
+  if (!isOnline) {
+    return (
+      // Added 'fixed inset-0' and 'z-100' to cover EVERYTHING
+      <div className="fixed inset-0 z-100 w-full h-full flex flex-col items-center justify-center bg-amber-50 text-center p-5 overflow-hidden">
+        <span className="text-7xl mb-4">🔌</span>
+        <h1 className="text-3xl md:text-5xl font-bold text-red-600 font-[poppins]">You're Offline</h1>
+        <p className="text-gray-600 mt-2 text-lg">Hungry? Check your connection to see our menu!</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="mt-6 px-10 py-3 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition-all shadow-lg cursor-pointer"
+        >
+          Try Again
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className='w-full min-h-screen bg-red-600 text-white overflow-hidden relative'>
@@ -53,7 +73,9 @@ const HomePage = () => {
         <div className={`h-screen w-full md:w-[32vw] bg-amber-100 fixed top-0 right-0 z-50 px-5 py-7 transition-transform duration-300 ${SideBar ? "translate-x-0" : "translate-x-full"} flex flex-col gap-3 shadow-2xl overflow-y-auto`}>
           <div className='flex items-center justify-between text-red-700 mb-4'>
             <h1 className='font-bold text-2xl font-[poppins]'>Order Items</h1>
-            <div className='p-2 hover:bg-red-100 rounded-full cursor-pointer transition-colors' onClick={() => setSideBar(false)}>
+            <div className='p-2 hover:bg-red-100 rounded-full cursor-pointer transition-colors' onClick={() => {
+              setSideBar(false)
+            }}>
               <RxCross1 className='text-2xl font-bold' />
             </div>
           </div>
