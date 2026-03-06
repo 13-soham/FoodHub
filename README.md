@@ -4,9 +4,11 @@ FoodHub is a responsive food delivery web application built with React.
 Users can browse restaurant items, search foods, filter categories, 
 and view dynamic price calculations including taxes and delivery charges.
 
+
 ## Author
 
 Soham Mondal, IIIT Kalyani
+
 
 ## Features
 
@@ -20,6 +22,7 @@ Soham Mondal, IIIT Kalyani
 - Responsive UI with Tailwind CSS
 - Toast notifications using React Toastify
 - Custom 404 page
+
 
 ## Tech Stack
 
@@ -38,6 +41,19 @@ Soham Mondal, IIIT Kalyani
  - ![Notifications](./screenShot/Screenshot%202026-03-07%20012047.png)
  - ![Restaurant Page](./screenShot/Screenshot%202026-03-07%20012140.png)
  - ![Cart Sidebar](./screenShot/Screenshot%202026-03-07%20012209.png)
+
+
+## Performance Audit (Google Lighthouse)
+
+Performance: 72  
+Accessibility: 93  
+Best Practices: 100  
+SEO: 83
+
+## Lighthouse Performance Report
+
+![Lighthouse Report](./screenShot/Screenshot%202026-03-07%20020431.png)
+
 
 ## Installation
 
