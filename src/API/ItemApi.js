@@ -1,4 +1,4 @@
-let resApi = "https://fakerestaurantapi.runasp.net/api/Restaurant/items";
+let resApi = "https://corsproxy.io/?https://fakerestaurantapi.runasp.net/api/Restaurant/items";
 
 export const Items = async () => {
     try {

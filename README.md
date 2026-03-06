@@ -1,16 +1,48 @@
-# React + Vite
+# FoodHub – React Food Delivery Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FoodHub is a responsive food delivery web application built with React. 
+Users can browse restaurant items, search foods, filter categories, 
+and view dynamic price calculations including taxes and delivery charges.
 
-Currently, two official plugins are available:
+## Author
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Soham Mondal, IIIT Kalyani
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Restaurant listing using external API
+- Food search and category filtering
+- Pagination for restaurant items
+- Dynamic cart price calculation (tax + delivery)
+- Offline detection using custom React hook
+- Lazy loading and code splitting
+- React Context API and Redux Toolkit for state management
+- Responsive UI with Tailwind CSS
+- Toast notifications using React Toastify
+- Custom 404 page
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- React Router
+- Redux Toolkit
+- Context API
+- Tailwind CSS
+- React Toastify
+- Vite
+
+
+## Screenshots
+ - ![Home Page](./screenShot/Screenshot%202026-03-07%20012008.png)
+ - ![Menu Page](./screenShot/Screenshot%202026-03-07%20012029.png)
+ - ![Notifications](./screenShot/Screenshot%202026-03-07%20012047.png)
+ - ![Restaurant Page](./screenShot/Screenshot%202026-03-07%20012140.png)
+ - ![Cart Sidebar](./screenShot/Screenshot%202026-03-07%20012209.png)
+
+## Installation
+
+```bash
+git clone https://github.com/13-soham/FoodHub
+cd FoodHub
+npm install
+npm run dev
