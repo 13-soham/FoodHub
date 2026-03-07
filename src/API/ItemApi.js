@@ -1,4 +1,5 @@
-let resApi = "https://corsproxy.io/?https://fakerestaurantapi.runasp.net/api/Restaurant/items";
+// let resApi = "https://corsproxy.io/?https://fakerestaurantapi.runasp.net/api/Restaurant/items";
+let resApi = "https://api.codetabs.com/v1/proxy/?quest=https://fakerestaurantapi.runasp.net/api/Restaurant/items";
 
 export const Items = async () => {
     try {
@@ -8,7 +9,7 @@ export const Items = async () => {
             throw new Error("response or data has not came through");
         }
 
-        return data;
+        return data? data : [] ;
     } catch (err) {
         console.error(err.message);
     }

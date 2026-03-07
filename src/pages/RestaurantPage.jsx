@@ -21,7 +21,7 @@ const RestaurantPage = () => {
   let maxPerPage = 12;
   let lastPage = CurrPage * maxPerPage;
   let firstPage = lastPage - maxPerPage;
-  let currData = Data.slice(firstPage, lastPage);
+  let currData = Array.isArray(Data) ? Data.slice(firstPage, lastPage) : [];
 
   let list = [];
   let totalPage = Math.ceil(Data.length / maxPerPage);
